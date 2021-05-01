@@ -44,7 +44,7 @@ let lastUpdate = document.createElement('div');
 lastUpdate.setAttribute('class','m-2 row justify-content-center justify-content-lg-end  text-center')
 async function getLastUpdate(){
   lastUpdate.innerHTML='<div class="s-loader text-center" >Loading...</div>'
-    let res1 = await fetch('http://localhost:3000/lastUpdate');
+    let res1 = await fetch('https://web-scrapping-mobile.herokuapp.com/lastUpdate');
     let res2 = await res1.json();
     lastUpdate.innerHTML=`<div class="col-lg-4 h6" style="color:black">Last Updated On ${res2[0].lastUpdate}</div>`;
 }
@@ -90,7 +90,7 @@ async function getAll(){
 getLastUpdate();
 
  row.innerHTML='<div class="loader" style="margin-top:25vh"></div>'
-  let res1 = await fetch(`http://localhost:3000/showAll`);
+  let res1 = await fetch(`https://web-scrapping-mobile.herokuapp.com/showAll`);
   let res2 = await res1.json();
   console.log(res2);
   createCard(res2)
@@ -129,7 +129,7 @@ if(data){
     
 
 
-    const res1 = await fetch(`http://localhost:3000/search?term=${this.value}`);
+    const res1 = await fetch(`https://web-scrapping-mobile.herokuapp.com/search?term=${this.value}`);
     const res2 = await res1.json();
    
     
@@ -188,7 +188,7 @@ if(searchBar.value){
 
   row.innerHTML='<div class="loader" style="margin-top:25vh"></div>'
   
-  let res1 = await fetch('http://localhost:3000/searchmobile',{
+  let res1 = await fetch('https://web-scrapping-mobile.herokuapp.com/searchmobile',{
     method:'POST',
     headers: {
       'Content-Type': 'application/json',
