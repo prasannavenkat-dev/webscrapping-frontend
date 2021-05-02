@@ -85,7 +85,7 @@ async function getAll(){
 getLastUpdate();
 
  row.innerHTML='<div class="loader" style="margin-top:25vh"></div>'
-  let res1 = await fetch(`https://web-scrapping-mobile.herokuapp.com/showAll`);
+  let res1 = await fetch(`https://web-scrapping-mobile.herokuapp.com/showAll`,{mode:"no-cors"});
   let res2 = await res1.json();
   console.log(res2);
   createCard(res2)
