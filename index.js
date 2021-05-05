@@ -157,7 +157,7 @@ let newName;
 
 
 optionBar.addEventListener("click",function(e){
-   
+   console.log(e)
     newName = e.path[0].innerText
     searchBar.value = newName
  
